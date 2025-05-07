@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block main %}
+<h2 class="mt-4 mb-3 text-center">Market Watch</h2>
+<!-- Add‑ticker form (POSTs to /watch); CSRF token included -->
+<form method="post" action="/watch" class="d-flex justify-content-center mb-4 gap-2">
+    <input name="symbol" class="form-control w-auto" placeholder="AAPL" autocomplete="off" required>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button class="btn btn-primary">Add</button>
+</form>
+<!-- Live‑updating watchlist table -->
+<table id="quotes" class="table table-striped text-center" style="max-width:600px;margin:auto">
+    <thead>
+        <tr><th>Symbol</th><th>Price</th><th>Day&nbsp;Δ%</th><th></th></tr>
+    </thead>
+    <tbody>
+        {% for q in quotes %}
+        <tr data-sym="{{ q.symbol }}">
+            <td>{{ q.symbol }}</td>
+            <td class="price">{{ q.price | usd }}</td>
+            <td class="change {{ 'text-success' if q.change >= 0 else 'text-danger' }}">
+                {{ (q.change * 100)|round(2) }}%
+            </td>
+            <td>
+                <!-- Remove symbol from watchlist -->
+                <form method="post" action="/unwatch" class="m-0">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="symbol" value="{{ q.symbol }}">
+                    <button class="btn btn-sm btn-outline-danger">✕</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    // Poll /api/quotes every 30 s and update price & day‑change cells in place
+    async function refreshQuotes(){
+        const res = await fetch('/api/quotes');
+        if (!res.ok) return;
+        const data = await res.json();
+        for (const [sym, q] of Object.entries(data)) {
+            const row = document.querySelector(`tr[data-sym='${sym}']`);
+            if (!row) continue;
+            row.querySelector('.price').textContent = q.price.toLocaleString('en-US', {style:'currency', currency:'USD'})
+            const changeCell = row.querySelector('.change');
+            const pct = (q.change * 100).toFixed(2) + '%';
+            changeCell.textContent = pct;
+            changeCell.className = 'change ' + (q.change >= 0 ? 'text-success' : 'text-danger');
+        }
+    }
+    refreshQuotes();
+    setInterval(refreshQuotes,30000);
+</script>
+{% endblock %}
