@@ -408,8 +408,8 @@ def stream():
                         "symbol": q["symbol"],
                         "changePercent": q["changePercent"]
                         })
-                # send as SSE data
-                yield f"data: {json.dumps(quotes)}\n\n"
+            # send as SSE data
+            yield f"data: {json.dumps(quotes)}\n\n"
     return Response(
         stream_with_context(event_stream()),
         mimetype="text/event-stream"
