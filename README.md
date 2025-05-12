@@ -53,7 +53,7 @@ Built on **Flask**, **Bootstrap 5**, **SQLite**, and **Chart.js**, Stonks demons
 
 ---
 
-## 📸 Screenshots & GIFs
+## 📸 Screenshots
 
 ![Holdings Page](docs/screenshots/holdings.png)
 
