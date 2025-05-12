@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block main %}
+<h2 class="mb-4 text-center">Latest Finance News</h2>
+
+{% if news %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-5">
+    {% for item in news %}
+        <div class="col">
+            <div class="card h-100 shadow-sm news-card">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title flex-grow-1">
+                <a href="{{ item.url }}"
+                    target="_blank"
+                    class="text-decoration-none text-reset">
+                    {{ item.title }}
+                </a>
+                </h5>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge bg-secondary">{{ item.site }}</span>
+                <small class="text-muted">{{ item.publishedDate }}</small>
+                </div>
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+  <p class="text-center text-muted mb-5">No news available right now.</p>
+{% endif %}
+  <p class="text-center">
+    <a href="{{ url_for('quote') }}" class="btn btn-primary">Get a Quote</a>
+    <a href="{{ url_for('buy') }}"   class="btn btn-success">Buy Shares</a>
+    <a href="{{ url_for('sell') }}"  class="btn btn-danger">Sell Shares</a>
+    <a href="{{ url_for('holdings') }}" class="btn btn-secondary">View Holdings</a>
+    <a href="{{ url_for('history') }}"  class="btn btn-info">Transaction History</a>
+  </p>
+{% endblock %}
+

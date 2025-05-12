@@ -1,0 +1,66 @@
+/* Size for brand */
+nav .navbar-brand:hover
+{
+    text-decoration: none;
+    color:#0d6efd;
+    font-size: xx-large;
+}
+
+/* Modern font + subtle background */
+body{font-family: 'Inter',sans-serif;background:#f8f9fa;}
+/* ---------------------------------------------------------
+   DARK‑MODE OVERRIDES
+   ---------------------------------------------------------*/
+[data-bs-theme="dark"] body {
+    background: #212529;      /* Bootstrap’s dark body colour */
+    color: #f8f9fa;           /* default text colour on dark */
+}
+
+[data-bs-theme="dark"] .portfolio-stat {
+    color: #f8f9fa;           /* bright Cash / Total numbers */
+}
+
+/* Optional: lighter table borders in dark mode */
+[data-bs-theme="dark"] table {
+    border-color: #343a40;
+}
+
+[data-bs-theme="dark"] .stats-light {
+    color: #dee2e6;                    /* Bootstrap gray‑200 */
+}
+
+[data-bs-theme="dark"] .navbar-dark .nav-link {
+    color: #f8f9fa;              /* same white as “Stonks” brand */
+}
+[data-bs-theme="dark"] .navbar-dark .nav-link:hover {
+    color: #ced4da;              /* subtle hover */
+}
+[data-bs-theme="dark"] .form-control {
+    background: #495057;        /* gray‑600 */
+    color: #fff;
+    border-color: #6c757d;      /* gray‑500 */
+}
+[data-bs-theme="dark"] .form-control::placeholder {
+    color: #ced4da;             /* gray‑300 */
+}
+/* Make ANY h4 inside main container bright in dark mode */
+[data-bs-theme="dark"] main h4 {
+    color: #f8f9fa;          /* Bootstrap white */
+}
+[data-bs-theme="dark"] .portfolio-stat {
+    color: #f8f9fa;          /* bright white on dark background */
+}
+
+.news-card {
+  transition: transform .2s, box-shadow .2s;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Make sure the card body is padded nicely in dark mode too */
+[data-bs-theme="dark"] .news-card {
+  background-color: #2a2e31;
+  border-color: #3a3f43;
+}

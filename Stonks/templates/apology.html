@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Error {{ top }}
+{% endblock %}
+
+{% block main %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card border-danger shadow-lg">
+        <div class="card-header bg-danger text-white text-center">
+          <h1 class="mb-0">Oops! Error {{ top }}</h1>
+        </div>
+        <div class="card-body text-center">
+          <p class="lead">{{ bottom }}</p>
+          <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">
+            ‹‹ Back to Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

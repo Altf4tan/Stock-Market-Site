@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}My Holdings{% endblock %}
+{% block main %}
+<table class="table table-striped mt-4">
+  <thead class="table-dark">
+    <tr>
+      <th>Symbol</th>
+      <th>Sector</th>
+      <th class="text-end">Shares</th>
+      <th class="text-end">Price / Δ %</th>
+      <th class="text-end">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <td>{{ row.symbol }}</td>
+      <td>{{ row.sector }}</td>
+      <td class="text-end">{{ row.shares }}</td>
+      <td class="text-end">
+        {% set pct = row.changePercent * 100 %}
+        <span class="badge ms-1 {{ 'bg-success' if pct >= 0 else 'bg-danger' }}">
+          {{ '%.2f'|format(pct) }} %
+        </span>
+      </td>
+      <td class="text-end">{{ row.value | usd }}</td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+    <div class="mt-4">
+        <h5 class="portfolio-stat">Cash: {{ cash | usd }}</h5>
+        <h4 class="portfolio-stat">Total: {{ grand_total | usd }}</h4>
+    </div>
+{% endblock %}
