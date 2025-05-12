@@ -18,14 +18,13 @@ def positive_int(field: str, label: str):
     except ValueError:
         return apology(f"{label} must be a positive integer")
 
+load_dotenv()
 # Configure application
 app = Flask(__name__)
 
-load_dotenv()
-
 # extra layer of protection for our website
-csrf = CSRFProtect(app)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+csrf = CSRFProtect(app)
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd_cents
