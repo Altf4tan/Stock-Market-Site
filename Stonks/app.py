@@ -1,4 +1,5 @@
-import json, time
+import json, time, os
+from dotenv import load_dotenv
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify, g, Response, stream_with_context
 from flask_session import Session
@@ -20,9 +21,11 @@ def positive_int(field: str, label: str):
 # Configure application
 app = Flask(__name__)
 
+load_dotenv()
+
 # extra layer of protection for our website
 csrf = CSRFProtect(app)
-app.config["SECRET_KEY"] = "e7c2d5b4c10f4fa89d7ba4355cfc84f9c04d2751b2f6d4d4e3c5a1be2f2a9dc5"
+app.config["SECRET_KEY"] = os.environ["e7c2d5b4c10f4fa89d7ba4355cfc84f9c04d2751b2f6d4d4e3c5a1be2f2a9dc5"]
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd_cents
