@@ -1,4 +1,4 @@
-import os, requests, time, feedparser
+import requests, time, feedparser
 
 from decimal import Decimal
 from flask import redirect, render_template, session
