@@ -1,5 +1,4 @@
 import json, time
-from dotenv import load_dotenv
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify, g, Response, stream_with_context
 from flask_session import Session
