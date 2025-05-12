@@ -1,6 +1,5 @@
-import requests, time, os, feedparser
+import requests, time
 
-from dotenv import load_dotenv
 from decimal import Decimal
 from flask import redirect, render_template, session
 from functools import wraps
@@ -9,9 +8,9 @@ import xml.etree.ElementTree as ET
 load_dotenv()
 
 # Source: https://site.financialmodelingprep.com/
-FMP_KEY = os.environ["FMP_KEY"]
+FMP_KEY = "9kL9TKTMw97140buG8or4gboW2mNv3fr"
 # Source https://newsapi.org
-NEWSAPI_KEY = os.environ["NEWSAPI_KEY"]
+NEWSAPI_KEY = "0260f85285a54f17a11f63a677b2f4f6"
 
 def apology(message, code=400):
     """Render message as an apology to user."""
