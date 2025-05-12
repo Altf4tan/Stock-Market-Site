@@ -5,3 +5,4 @@ Flask-WTF
 pytz
 requests
 python-dotenv
+feedparser
