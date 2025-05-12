@@ -4,32 +4,12 @@
 
 A Flask-based stock trading simulator and tracker leveraging real-time APIs and a rich feature set, built for educational and portfolio-management purposes.
 
----
-
-## 📋 Requirements
-
-All Python dependencies are listed in **requirements.txt**. To install:
-
-```bash
-pip install -r requirements.txt
-```
-
-Contents of requirements.txt:
-
-* cs50
-* Flask
-* Flask-Session
-* pytz
-* requests
-
----
-
 ## 🚀 Overview
 
 **Stonks** is an interactive web application that allows users to:
 
 * **Look up** real-time stock quotes (via AlphaVantage / FinancialModelingPrep)
-* **Buy & sell** shares using live or simulated USD
+* **Buy & sell** shares using simulated USD
 * **Track holdings** with cost basis, unrealized P/L, and sector data
 * **View transaction history** of all trades
 * **Monitor market** prices in a refreshable watchlist
@@ -43,34 +23,30 @@ Built on **Flask**, **Bootstrap 5**, **SQLite**, and **Chart.js**, Stonks demons
 
 ## ✨ Key Features
 
-1. **Real & Paper Trading**
-
-   * Toggle between live cash and simulated USD
-   * Reset paper-cash on demand
-2. **Portfolio Dashboard**
+1. **Portfolio Dashboard**
 
    * Animated count-up for cash & portfolio value
    * 30-day sparkline chart of portfolio performance
    * Live marquee ticker of top holdings
-3. **Holdings & P/L**
+2. **Holdings & P/L**
 
    * Detailed cost basis, current price, unrealized gain/loss (\$ & %)
    * Sector breakdown via FinancialModelingPrep profiles
-4. **Transaction History**
+3. **Transaction History**
 
    * Chronological list of all buys and sells with timestamps and sectors
-5. **Market Watch**
+4. **Market Watch**
 
    * Customizable watchlist with auto-refresh every 15 seconds
    * Green/red badges for gainers and losers
-6. **News Feed**
+5. **News Feed**
 
    * Unified output from NewsAPI.org, RSS (Reuters, NYT, BBC), and static demo
    * Responsive card grid with hover animation
-7. **Dark/Light Mode**
+6. **Dark/Light Mode**
 
    * Toggle stored in localStorage, styling via Bootstrap 5.3 themes
-8. **Accessibility & Performance**
+7. **Accessibility & Performance**
 
    * Semantic HTML, ARIA attributes, keyboard focus states
    * Caching for API calls, minimal JS bundle, pagination for history
