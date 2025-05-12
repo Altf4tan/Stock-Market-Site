@@ -6,3 +6,4 @@ pytz
 requests
 python-dotenv
 feedparser
+pytest
