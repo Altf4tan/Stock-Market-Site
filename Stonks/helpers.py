@@ -1,4 +1,4 @@
-import requests, time
+import requests, time, os
 
 from dotenv import load_dotenv
 from decimal import Decimal
