@@ -25,7 +25,7 @@ load_dotenv()
 
 # extra layer of protection for our website
 csrf = CSRFProtect(app)
-app.config["SECRET_KEY"] = os.environ["e7c2d5b4c10f4fa89d7ba4355cfc84f9c04d2751b2f6d4d4e3c5a1be2f2a9dc5"]
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd_cents
