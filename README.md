@@ -1,7 +1,7 @@
 # Stonks: A CS50x 2025 Finance Web App
 
-[dashboard](https://github.com/user-attachments/assets/35caeace-3dcb-4bb0-a4f6-fb2753b7c062)
-
+[Dashboard](https://github.com/user-attachments/assets/35caeace-3dcb-4bb0-a4f6-fb2753b7c062)
+[Youtube Showcase](https://youtu.be/SfRZAgzWW_Q)
 
 A Flask-based stock trading simulator and tracker leveraging real-time APIs and a rich feature set, built for educational and portfolio-management purposes.
 
@@ -56,13 +56,13 @@ Built on **Flask**, **Bootstrap 5**, **SQLite**, and **Chart.js**, Stonks demons
 
 ## 📸 Screenshots
 
-[holdings](https://github.com/user-attachments/assets/e08c54c9-c073-4b85-a6e0-1421e07c02be)
+[Holdings](https://github.com/user-attachments/assets/e08c54c9-c073-4b85-a6e0-1421e07c02be)
 
-[history](https://github.com/user-attachments/assets/fc57ad39-f7d6-4e3c-a72c-bb51aa657eed)
+[History](https://github.com/user-attachments/assets/fc57ad39-f7d6-4e3c-a72c-bb51aa657eed)
 
-[market watch](https://github.com/user-attachments/assets/cf551b2f-397f-4630-b14b-9a26c6fd5db3)
+[Market Watch](https://github.com/user-attachments/assets/cf551b2f-397f-4630-b14b-9a26c6fd5db3)
 
-[live ticker](https://github.com/user-attachments/assets/e9bf0a2a-f426-42d3-8c5a-609ec82a262d)
+[Websocket Live Ticker Banner](https://github.com/user-attachments/assets/e9bf0a2a-f426-42d3-8c5a-609ec82a262d)
 
 ---
 
