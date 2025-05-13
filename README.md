@@ -62,6 +62,7 @@ Built on **Flask**, **Bootstrap 5**, **SQLite**, and **Chart.js**, Stonks demons
 
 [market_watch](https://github.com/user-attachments/assets/cf551b2f-397f-4630-b14b-9a26c6fd5db3)
 
+[live_ticker](https://github.com/user-attachments/assets/e9bf0a2a-f426-42d3-8c5a-609ec82a262d)
 
 ---
 
