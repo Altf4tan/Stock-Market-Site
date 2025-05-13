@@ -5,8 +5,6 @@ from flask import redirect, render_template, session
 from functools import wraps
 import xml.etree.ElementTree as ET
 
-load_dotenv()
-
 # Source: https://site.financialmodelingprep.com/
 FMP_KEY = "9kL9TKTMw97140buG8or4gboW2mNv3fr"
 # Source https://newsapi.org
