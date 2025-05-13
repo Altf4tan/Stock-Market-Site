@@ -4,7 +4,6 @@
 <!-- Add‑ticker form (POSTs to /watch); CSRF token included -->
 <form method="post" action="/watch" class="d-flex justify-content-center mb-4 gap-2">
     <input name="symbol" class="form-control w-auto" placeholder="AAPL" autocomplete="off" required>
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button class="btn btn-primary">Add</button>
 </form>
 <!-- Live‑updating watchlist table -->
