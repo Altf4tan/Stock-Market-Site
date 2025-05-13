@@ -3,7 +3,6 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify, g, Response, stream_with_context
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_wtf import CSRFProtect
 from decimal import Decimal, ROUND_HALF_UP
 from helpers import apology, login_required, lookup, usd_cents, sector, get_finance_news
 
