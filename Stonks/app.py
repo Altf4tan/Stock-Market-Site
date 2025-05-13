@@ -16,7 +16,6 @@ def positive_int(field: str, label: str):
     except ValueError:
         return apology(f"{label} must be a positive integer")
 
-load_dotenv()
 # Configure application
 app = Flask(__name__)
 
