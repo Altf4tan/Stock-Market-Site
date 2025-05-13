@@ -60,9 +60,9 @@ Built on **Flask**, **Bootstrap 5**, **SQLite**, and **Chart.js**, Stonks demons
 
 [history](https://github.com/user-attachments/assets/fc57ad39-f7d6-4e3c-a72c-bb51aa657eed)
 
-[market_watch](https://github.com/user-attachments/assets/cf551b2f-397f-4630-b14b-9a26c6fd5db3)
+[market watch](https://github.com/user-attachments/assets/cf551b2f-397f-4630-b14b-9a26c6fd5db3)
 
-[live_ticker](https://github.com/user-attachments/assets/e9bf0a2a-f426-42d3-8c5a-609ec82a262d)
+[live ticker](https://github.com/user-attachments/assets/e9bf0a2a-f426-42d3-8c5a-609ec82a262d)
 
 ---
 
@@ -158,6 +158,14 @@ pytest
 * Advanced risk metrics: Volatility, Beta, Sharpe Ratio
 * Export CSV/PDF reports for holdings and history
 * Mobile app companion (React Native or Flutter)
+
+### Future Security Improvements
+* **CSRF Protection** – For local testing I disabled Flask‑WTF’s CSRF check to avoid configuration headaches.  
+  In a production deployment I would:
+  - Store `SECRET_KEY` and API keys in environment variables
+  - Re‑enable `CSRFProtect(app)` and add `{{ csrf_token() }}` to every POST form.
+* **HTTPS & HSTS** – Serve the app behind TLS so cookies are secure.
+* **Rate‑limiting** – Add basic request throttling to protect the quote API endpoint.
 
 ---
 
