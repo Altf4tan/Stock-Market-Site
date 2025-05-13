@@ -137,9 +137,7 @@ pytest
 
 ## 🔐 Security & Best Practices
 
-* **API Keys** stored in environment variables, never committed.
 * **Password Hashing** via `werkzeug.security.generate_password_hash`.
-* **CSRF protection** on forms using Flask-WTF.
 * **Input Validation** and error handling with custom apology pages.
 
 ---
